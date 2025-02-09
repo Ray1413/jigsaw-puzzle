@@ -1,5 +1,11 @@
+---
+import { getImage } from 'astro:assets'
+import bgImg from '@/assets/desk_bg.jpg'
+const optimizedBackground = await getImage({ src: bgImg, format: 'webp' })
+---
+
 <!doctype html>
-<html lang='en'>
+<html lang='en' data-url={optimizedBackground.src}>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -13,3 +19,12 @@
 </html>
 
 <style></style>
+
+<script>
+  const htmlEl = document.querySelector('html')
+  if (htmlEl) {
+    htmlEl.style.backgroundImage = `url("${htmlEl.dataset.url}")`
+    htmlEl.style.backgroundSize = 'cover'
+    htmlEl.style.backgroundPosition = 'center'
+  }
+</script>

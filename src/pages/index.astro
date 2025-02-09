@@ -1,5 +1,4 @@
 ---
-import Welcome from '../components/Welcome.astro'
 import Layout from '../layouts/Layout.astro'
 
 import Home from '@/components/react/HomePage/Home'
@@ -11,14 +10,3 @@ import Home from '@/components/react/HomePage/Home'
 <Layout>
   <Home client:only />
 </Layout>
-
-<script>
-  import bgImg from '@/assets/desk_bg.jpg'
-
-  const htmlEl = document.querySelector('html')
-  if (htmlEl) {
-    htmlEl.style.backgroundImage = `url("${bgImg.src}")`
-    htmlEl.style.backgroundSize = 'cover'
-    htmlEl.style.backgroundPosition = 'center'
-  }
-</script>
