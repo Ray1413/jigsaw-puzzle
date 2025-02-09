@@ -1,10 +1,11 @@
 import React from 'react'
 
+import Puzzle from '@/components/react/Puzzle'
+
 export default function Home() {
   return (
     <>
-      <div>Home</div>
-      <button className='btn btn-primary'>Primary</button>
+      <Puzzle />
     </>
   )
 }

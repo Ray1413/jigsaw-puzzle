@@ -9,5 +9,16 @@ import Home from '@/components/react/HomePage/Home'
 ---
 
 <Layout>
-  <Home />
+  <Home client:only />
 </Layout>
+
+<script>
+  import bgImg from '@/assets/desk_bg.jpg'
+
+  const htmlEl = document.querySelector('html')
+  if (htmlEl) {
+    htmlEl.style.backgroundImage = `url("${bgImg.src}")`
+    htmlEl.style.backgroundSize = 'cover'
+    htmlEl.style.backgroundPosition = 'center'
+  }
+</script>
